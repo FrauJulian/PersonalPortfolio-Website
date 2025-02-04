@@ -44,7 +44,7 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    background-image: url("../img/background.webp");
+    background-image: url("Images/background.webp");
     /*background-color: #2f3136; */
     height: 100%;
 }
@@ -133,6 +133,7 @@ ul.nav li.left {
 
 #github_projects .stars {
     color: var(--main-txt-color) !important;
+    float: right;
 }
 
 #github_projects a {
@@ -167,7 +168,7 @@ ul.nav li.left {
     backdrop-filter: blur(150px);
 }
 
-.bio-text {
+.long-bio-text {
     font-size: 20px;
     opacity: 0;
     width: 60%;
@@ -276,11 +277,11 @@ ul.nav li.left {
     cursor: pointer;
 }
 
-.icon-area a {
+.contact-area a {
     color: var(#9ee700);
 }
 
-.icon-area i {
+.contact-area i {
     justify-content: space-between;
     width: var(--main-icon-width);
     padding-top: var(--main-padding);
@@ -288,12 +289,12 @@ ul.nav li.left {
     border-radius: var(--main-border-radius);
 }
 
-.icon-area i:hover {
+.contact-area i:hover {
     cursor: pointer;
     backdrop-filter: blur(150px);
 }
 
-.js-reminder {
+.warning-text {
     font-style: normal;
     font-weight: 900;
     padding: var(--main-padding);
@@ -486,7 +487,7 @@ ul.nav li.left {
     }
 
     footer {
-        width: var(--main-container-width);
+        width: 90%;
     }
 
     ul.nav li,
@@ -508,7 +509,7 @@ ul.nav li.left {
         margin-left: 10px;
     }
 
-    .bio-text {
+    .long-bio-text {
         width: 95% !important;
     }
 
@@ -516,7 +517,7 @@ ul.nav li.left {
         grid-template-columns: auto;
     }
 
-    .icon-area i {
+    .contact-area i {
         margin-top: var(--mobile-margin);
     }
 
