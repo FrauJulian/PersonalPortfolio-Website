@@ -1,14 +1,14 @@
 ::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
+    width: var(--scroll-width);
+    height: var(--scroll-width);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #eaebfe;
+    background: var(--scroll-thumb-bg);
 }
 
 ::-webkit-scrollbar-track {
-    background: transparent;
+    background: var(--scroll-track-bg);
 }
 
 :root {
@@ -22,11 +22,30 @@
     --padding-big: 20px;
     --padding-small: 5px;
     --main-container-width: 750px;
-    --main-txt-color: #dbe9f4;
-    --main-shadow-color: #634b28ad;
+    --main-txt-color: White;
+    --main-shadow-color: #6F3E38;
     --donation-modal-height: 200px;
     --donation-modal-width: 600px;
     --donation-modal-top: 50%;
+    --scroll-width: 5px;
+    --scroll-thumb-bg: Red;
+    --scroll-track-bg: transparent;
+    --background-image: url("Images/Background.webp");
+    --blur-small: 20px;
+    --blur-large: 160px;
+    --shadow-y: 4px;
+    --shadow-blur: 16px;
+    --shadow-spread: 0;
+    --shadow-hover-y: 8px;
+    --shadow-hover-blur: 16px;
+    --font-size-large: 20px;
+    --width-medium: 60%;
+    --max-width-large: 90%;
+    --grid-column-width: 24%;
+    --portfolio-item-height: 128px;
+    --transition-duration-long: 0.5s;
+    --transition-duration-short: 0.3s;
+    --modal-card-height: 80%;
 }
 
 a,
@@ -44,13 +63,12 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    background-image: url("Images/background.webp");
-    /*background-color: #2f3136; */
+    background-image: var(--background-image);
     height: 100%;
 }
 
 footer {
-    padding-bottom: 5px;
+    padding-bottom: var(--main-padding);
     max-width: 100%;
 }
 
@@ -67,9 +85,9 @@ ul.nav {
     list-style-type: none;
     margin: 0;
     overflow: hidden;
-    backdrop-filter: blur(150px);
-    box-shadow: 0 4px 8px 0 var(--main-shadow-color);
-    transition: 0.3s;
+    backdrop-filter: blur(var(--blur-large));
+    box-shadow: 0 var(--shadow-y) var(--shadow-blur) var(--shadow-spread) var(--main-shadow-color);
+    transition: var(--transition-duration-short);
 }
 
 ul.nav li {
@@ -169,42 +187,42 @@ ul.nav li.left {
 }
 
 .long-bio-text {
-    font-size: 20px;
+    font-size: var(--font-size-large);
     opacity: 0;
-    width: 60%;
-    margin-bottom: 15px !important;
+    width: var(--width-medium);
+    margin-bottom: var(--main-padding) !important;
     margin: auto;
-    padding: 10px;
+    padding: var(--main-margin);
 }
 
 .card {
     margin-top: var(--main-padding);
-    box-shadow: 0 4px 8px 0 var(--main-shadow-color);
-    transition: 0.3s;
-    backdrop-filter: blur(20px);
+    box-shadow: 0 var(--shadow-y) var(--shadow-blur) var(--shadow-spread) var(--main-shadow-color);
+    transition: var(--transition-duration-short);
+    backdrop-filter: blur(var(--blur-small));
     padding: var(--main-padding);
     text-align: center;
-    color: var(#9ee700);
+    color: var(--main-txt-color);
 }
 
 .card-projects {
     display: grid;
-    box-shadow: 0 4px 8px 0 var(--main-shadow-color);
-    transition: 0.3s;
-    backdrop-filter: blur(150px);
+    box-shadow: 0 var(--shadow-y) var(--shadow-blur) var(--shadow-spread) var(--main-shadow-color);
+    transition: var(--transition-duration-short);
+    backdrop-filter: blur(var(--blur-large));
 }
 
 .card-projects:hover {
-    box-shadow: 0 8px 16px 0 var(--main-shadow-color);
+    box-shadow: 0 var(--shadow-hover-y) var(--shadow-hover-blur) var(--shadow-spread) var(--main-shadow-color);
 }
 
 .card:hover {
-    box-shadow: 0 8px 16px 0 var(--main-shadow-color);
+    box-shadow: 0 var(--shadow-hover-y) var(--shadow-hover-blur) var(--shadow-spread) var(--main-shadow-color);
 }
 
 .container {
     background: transparent;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(var(--blur-small));
     margin: auto;
     width: var(--main-container-width);
 }
@@ -217,8 +235,8 @@ ul.nav li.left {
     max-width: 100%;
 }
 
-.github-modal>.card {
-    height: 80% !important;
+.github-modal > .card {
+    height: var(--modal-card-height) !important;
     overflow-y: auto;
     text-align: start;
 }
@@ -233,7 +251,7 @@ ul.nav li.left {
 .grid-item {
     width: var(--main-bio-size);
     margin-left: var(--main-padding);
-    backdrop-filter: blur(150px);
+    backdrop-filter: blur(var(--blur-large));
     border-radius: var(--main-border-radius);
 }
 
@@ -265,7 +283,7 @@ ul.nav li.left {
 .hover-items,
 .hover-items a {
     color: var(--main-txt-color);
-    padding: var(--main-padding) 10px;
+    padding: var(--main-padding) var(--main-margin);
     font-size: large;
     margin: auto;
     line-height: 1.5em;
@@ -273,12 +291,12 @@ ul.nav li.left {
 }
 
 .hoverable:hover {
-    backdrop-filter: blur(150px);
+    backdrop-filter: blur(var(--blur-large));
     cursor: pointer;
 }
 
 .contact-area a {
-    color: var(#9ee700);
+    color: var(--main-txt-color);
 }
 
 .contact-area i {
@@ -291,7 +309,7 @@ ul.nav li.left {
 
 .contact-area i:hover {
     cursor: pointer;
-    backdrop-filter: blur(150px);
+    backdrop-filter: blur(var(--blur-large));
 }
 
 .warning-text {
@@ -301,7 +319,7 @@ ul.nav li.left {
 }
 
 .max60 {
-    max-width: 90%;
+    max-width: var(--max-width-large);
     margin: auto;
 }
 
@@ -344,13 +362,13 @@ ul.nav li.left {
 
 .portfolio-done {
     display: grid;
-    grid-template-columns: 24% 24% 24% 24%;
+    grid-template-columns: repeat(4, var(--grid-column-width));
     justify-content: space-between;
     margin-bottom: 2em;
 }
 
 .portfolio-done-item {
-    height: 128px;
+    height: var(--portfolio-item-height);
 }
 
 .profile img {
@@ -368,14 +386,14 @@ ul.nav li.left {
     display: block;
     width: 100%;
     height: auto;
-    transition: .5s ease;
+    transition: var(--transition-duration-long) ease;
     backface-visibility: hidden;
-    box-shadow: 0 4px 8px 0 var(--main-shadow-color);
-    transition: 0.3s;
+    box-shadow: 0 var(--shadow-y) var(--shadow-blur) var(--shadow-spread) var(--main-shadow-color);
+    transition: var(--transition-duration-short);
 }
 
 .project p {
-    transition: .5s ease;
+    transition: var(--transition-duration-long) ease;
     opacity: 0;
     position: absolute;
     top: 50%;
@@ -457,6 +475,9 @@ ul.nav li.left {
         --donation-modal-height: 350px;
         --donation-modal-width: 600px;
         --donation-modal-top: 50%;
+        --mobile-margin: 5px;
+        --main-container-width: 95%;
+        --mobile-width: 90%;
     }
 
     body,
@@ -480,12 +501,6 @@ ul.nav li.left {
 }
 
 @media screen and (max-width:700px) {
-    :root {
-        --mobile-margin: 5px;
-        --main-container-width: 95%;
-        --mobile-width: 90%;
-    }
-
     footer {
         width: 90%;
     }

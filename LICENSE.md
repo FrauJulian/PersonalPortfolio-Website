@@ -1,6 +1,6 @@
 # License Agreement
 
-**Copyright © 2024 Julian Lechner. All rights reserved.**
+**Copyright © 2025 Julian Lechner. All rights reserved.**
 
 ## 1. Grant of License
 
