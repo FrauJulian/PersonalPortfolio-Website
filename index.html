@@ -3,36 +3,34 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Julian Lechner</title>
-    <link rel="shortcut icon" type="image/png" href="favicon.ico" />
+    <link rel="icon" href="favicon.ico" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="Resources/Style.css" />
 
-    <link rel="stylesheet" type="text/css" href="Style.css" />
+    <script rel="preload" src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
+    <script async rel="preload" src="Resources/Javascript.js"></script>
 </head>
 
 <body>
-    <div class="container">
+    <section class="container">
         <div class="card profile">
 
-            <!-- BASIC INFORMATION -->
-            <img src="img/logo.png" width="200px" height="200px" fetchpriority="low">
-            <h1>Hii! 👋 I'm Julian Lechner!</h1>
+            <img src="Resources/Images/Logo.webp" width="200px" height="200px" fetchpriority="high" alt="Online Profilbild von Julian Lechner"/>
+            <h1>Hallo! 👋 I'm Julian Lechner!</h1>
             <h3>📍 Austria, Vienna</h3>
 
             <br>
             <hr>
 
-            <!-- CLICKABLE TEXT > TO SEE BIO TEXT-->
             <div class="max60">
-                <div id="short-desc" class="hover-items">
+                <div id="short-bio-text" class="hover-items">
                     <i id="left-arrow" class="fas fa-arrow-right"></i>
 
-                    <a onclick="plausible('expandprofile')">
+                    <a>
                         <u>
                             <h3>A young enthusiastic developer from Austria!</h3>
                         </u>
@@ -42,28 +40,27 @@
                 </div>
             </div>
 
-            <!-- HIDDEN BIO TEXT -->
-            <div class="bio-text hidden">
+            <div class="long-bio-text hidden">
                 <p>
-                    My name is Julian, many people also call me Julie. I'm
-                    <script>let startDate = new Date('2009-03-03'); let today = new Date(); let diffTime = Math.abs(today - startDate); let diffYears = diffTime / (1000 * 60 * 60 * 24 * 365.25); document.write(diffYears.toFixed(1));</script>
-                    years old and come from beautiful Austria. I spend most of my time in front of the computer.
-                    <br />
-                    <br />
+                    My name is Julian, many people also call me Julie. I'm %AGE% years old and come from beautiful Austria.
+                    I spend most of my time in trains.
+                    <br/>
+                    <br/>
                     My biggest hobby apart from software development is diving. Floating in deep water and only thinking
                     about the here and now always brings me back to the depths. I try to practice this hobby as often as
-                    possible.
-                    <br />
-                    <br />
-                    I currently work mainly for the Viennese company SobIT Gmbh. This company develops software for any
-                    care company, for scheduling employees as well as recording the status of patients.
-                    <br />
-                    <br />
-                    I also work for the company GERLACH SYSTEMS or SynHost. They rent out servers, domains, web servers,
-                    game servers etc. in various locations.
-                    <br />
-                    <br />
-                    <a href="mailto:fraujulian@lechner.top" onclick="plausible('envelope')" target="_blank">
+                    possible for fun and my health.
+                    <br/>
+                    <br/>
+                    I currently work mainly for the Viennese company SobIT Gmbh. This company develops software for most
+                    care companies in Austria, both for staff scheduling and for patient registration.
+                    <br/>
+                    <br/>
+                    I also work for a company called GERLACH SYSTEMS, which is the owner of the SynRadio and SynHost
+                    projects. Their main business is the rental of servers, domains, web servers, game servers, etc. at
+                    various locations.
+                    <br/>
+                    <br/>
+                    <a href="mailto:contact@fraujulian.xyz">
                         <h3>Just contact me!</h3>
                     </a>
                 </p>
@@ -72,13 +69,13 @@
             <hr>
             <br>
 
-            <!-- JAVASCRIPT REMINDER -->
-            <p class="js-reminder">Enable JavaScript to see what I do.</p>
+            <noscript>
+                <h2 class="warning-text">Enable JavaScript to see more.</h2>
+            </noscript>
 
-            <!-- TOOLS/LANGUAGES/FRAMEWORKS -->
             <div class="bio grid-container">
                 <div class="grid-item-start">
-                    <h1>I code with</h1>
+                    <h1>I work with</h1>
                 </div>
                 <div class="grid-item">
                     <h1>NodeJS</h1>
@@ -105,53 +102,73 @@
                     <h1>WPF</h1>
                 </div>
                 <div class="grid-item">
-                    <h1>Docker</h1>
+                    <h1>Avalonia</h1>
                 </div>
                 <div class="grid-item">
-                    <h1>Linux</h1>
+                    <h1>Ubuntu</h1>
                 </div>
                 <div class="grid-item">
-                    <h1>Jetbrains</h1>
+                    <h1>WebStorm</h1>
+                </div>
+                <div class="grid-item">
+                    <h1>Rider</h1>
+                </div>
+                <div class="grid-item">
+                    <h1>SSMS</h1>
+                </div>
+                <div class="grid-item">
+                    <h1>MySQL</h1>
+                </div>
+                <div class="grid-item">
+                    <h1>Java</h1>
+                </div>
+                <div class="grid-item">
+                    <h1>Github</h1>
+                </div>
+                <div class="grid-item">
+                    <h1>Gitlab</h1>
+                </div>
+                <div class="grid-item">
+                    <h1>Azure Devops</h1>
                 </div>
             </div>
 
-            <!-- ICONS -->
-            <div class="icon-area">
-                <a href="mailto:contact@fraujulian.xyz" onclick="plausible('envelope')" target="_blank">
-                    <i class="fa-solid fa-envelope fa-3x"></i></a>
+            <div class="contact-area">
+                <a href="mailto:contact@fraujulian.xyz">
+                    <i class="fa-solid fa-envelope fa-3x"></i>
+                </a>
 
-                <a href="tel:+436609254001" onclick="plausible('phone')" target="_blank">
-                    <i class="fa-solid fa-phone fa-3x"></i></a>
+                <a href="tel:+436609254001">
+                    <i class="fa-solid fa-phone fa-3x"></i>
+                </a>
 
-                <a href="https://discord.com/users/860206216893693973" onclick="plausible('discord')" target="_blank">
-                    <i class="fab fa-discord fa-3x"></i></a>
+                <a href="https://discord.com/users/860206216893693973">
+                    <i class="fab fa-discord fa-3x"></i>
+                </a>
 
-                <a href="https://github.com/fraujulian" onclick="plausible('github')" target="_blank">
-                    <i class="fab fa-github fa-3x"></i></a>
+                <a href="https://github.com/fraujulian">
+                    <i class="fab fa-github fa-3x"></i>
+                </a>
+
+                <a href="https://www.xing.com/profile/Julian_Lechner03274">
+                    <i class="fab fa-xing fa-3x"></i>
+                </a>
+
+                <a href="https://www.linkedin.com/in/julian-lechner-98b377356/">
+                    <i class="fab fa-linkedin fa-3x"></i>
+                </a>
             </div>
         </div>
 
-        <!-- GITHUB PROJECTS -->
         <div id="github_projects" class="card">
-            <h2>Loading...</h2>
+            <h2 id="loading-text" class="warning-text">Enable JavaScript to see more.</h2>
         </div>
-    </div>
+    </section>
 
     <footer>
-
-        <!-- FOOTER -->
         <p>
-            <a href="/imprint/">Imprint</a>
-            |
-            &copy;
-            2023 -
-            <script>document.write(new Date().getFullYear())</script> Julian Lechner - All rights reserved.
+            <a href="IMPRINT/index.html">IMPRINT</a> | &copy; 2023 - %CURRENT_YEAR% Julian Lechner - All rights reserved.
         </p>
-
-        <!-- SCRIPTS -->
-        <script defer data-domain="fraujulian.xyz" src="https://plausible.io/js/plausible.js"></script>
-        <script rel="preload" src="Javascript.js"></script>
-
     </footer>
 </body>
 
