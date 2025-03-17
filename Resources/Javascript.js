@@ -44,11 +44,11 @@ function ReplacePlaceholders() {
 }
 
 function ReplaceAgePlaceholder() {
-    let birthDate = new Date(_birthdayDate);
-    let diffTime = Math.abs(_todayDate - birthDate);
-    let diffTimeInYearsCalculation = diffTime / (1000 * 60 * 60 * 24 * 365.25);
-    let tempAge = diffTimeInYearsCalculation.toFixed(1)
-    let age = tempAge % 1 === 0 ? diffTimeInYearsCalculation.toFixed(0) : diffTimeInYearsCalculation.toFixed(1);
+    let birthDate = new Date("3-3-2009");
+    let diffTimeInMilliseconds = new Date() - birthDate;
+    let diffTimeInYears = diffTimeInMilliseconds / (1000 * 60 * 60 * 24 * 365.25);
+    let tempAge = diffTimeInYears.toFixed(1);
+    let age = tempAge % 1 === 0 ? Math.round(diffTimeInYears) : tempAge;
     document.body.innerHTML = document.body.innerHTML.replace("%AGE%", age);
 }
 
