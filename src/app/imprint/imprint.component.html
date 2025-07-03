@@ -1,0 +1,76 @@
+<div class="container">
+  <div class="card profile">
+
+    <h1>Imprint</h1>
+
+    <h2>Information according to §5 ECG</h2>
+
+    {{ globalFields.firstname }} {{ globalFields.lastname }} <br>
+    {{ street }} {{ houseNumber }} <br>
+    {{ zip }} {{ city }} <br>
+    {{ country }} <br>
+
+    <br>
+
+    <h4>Contact:</h4>
+    Phone: <b><u><a href="tel:{{globalFields.hrefContactPhone}}">{{ globalFields.contactPhone }}</a></u></b> <br>
+    E-Mail: <b><u><a [href]="contactSafeMail">{{ globalFields.contactMail }}</a></u></b>
+
+    <br>
+
+    <h4>Abuse Contact:</h4>
+    E-Mail: <b><u><a [href]="abuseSafeMail">{{ abuseMail }}</a></u></b>
+
+    <br>
+
+    <h2>Disclaimer:</h2>
+
+    <h3>Liability for links</h3>
+    Our website contains links to external third-party websites over whose content we have no influence. Therefore, we
+    cannot accept any liability for this third-party content. The respective provider or operator of the pages is
+    always responsible for the content of the linked pages. The linked pages were checked for possible legal
+    violations at the time of linking. Illegal content was not recognizable at the time of linking. However, permanent
+    monitoring of the content of the linked pages is not reasonable without concrete evidence of an infringement. If
+    we become aware of any legal infringements, we will remove such links immediately.
+
+    <br>
+    <br>
+
+    <h3>Copyright</h3>
+    The content and works created by the site operators on these pages are subject to German copyright law.
+    Duplication, processing, distribution and any form of commercialization of such material beyond the scope of the
+    copyright law shall require the prior written consent of its respective author or creator. Downloads and copies of
+    this site are only permitted for private, non-commercial use. Insofar as the content on this site was not created
+    by the operator, the copyrights of third parties are respected. In particular, third-party content is identified
+    as such. Should you nevertheless become aware of a copyright infringement, please inform us accordingly. If we
+    become aware of any infringements, we will remove such content immediately.
+
+    <br>
+    <br>
+
+    <h3>Data privacy</h3>
+    The use of our website is generally possible without providing personal data. Insofar as personal data (e.g. name,
+    address or e-mail addresses) is collected on our website, this is always done on a voluntary basis as far as
+    possible. This data will not be passed on to third parties without your express consent.
+    We would like to point out that data transmission over the Internet (e.g. when communicating by e-mail) may be
+    subject to security vulnerabilities. Complete protection of data against access by third parties is not possible.
+    We hereby expressly prohibit the use of contact data published within the scope of the imprint obligation by third
+    parties for sending unsolicited advertising and information material. The operators of the website expressly
+    reserve the right to take legal action in the event of the unsolicited sending of advertising information, such as
+    spam e-mails.
+
+    <div class="max60">
+      <div id="short-desc" class="hover-items" routerLink="">
+        <fa-icon [icon]="faArrowRight"></fa-icon>
+        <a>
+          <u>
+            <h2>Back</h2>
+          </u>
+        </a>
+        <fa-icon [icon]="faArrowLeft"></fa-icon>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer ngSkipHydration></app-footer>

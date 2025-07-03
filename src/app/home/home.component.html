@@ -1,0 +1,141 @@
+<section class="container">
+  <div class="card profile">
+
+    <img ngSrc="Logo.png" (click)="openInfo()" priority width="200" height="200" fetchpriority="high" alt="profile picture"/>
+    <h1>Hallo! 👋 I'm {{ globalFields.firstname }} {{ globalFields.lastname }}!</h1>
+    <h3>📍 Austria, Vienna</h3>
+
+    <br>
+    <hr>
+
+    <div class="max60">
+      <div id="short-bio-text" class="hover-items" (click)="toggleBio()">
+        <fa-icon id="left-arrow" [icon]=" isLongBioShown ? faArrowDown : faArrowRight "></fa-icon>
+
+        <a>
+          <u>
+            <h3>A young enthusiastic developer from Austria!</h3>
+          </u>
+        </a>
+
+        <fa-icon id="right-arrow" [icon]=" isLongBioShown ? faArrowDown : faArrowLeft "></fa-icon>
+      </div>
+    </div>
+
+    <div class="long-bio-text" *ngIf="isLongBioShown" @fadeInOut (click)="closeOnOverlayClick($event)">
+      <p>
+        My name is {{ globalFields.firstname }}, many people also call me Julie. I'm {{ age }} years old and come from
+        beautiful Austria.
+        I spend most of my time in trains.
+        <br/>
+        <br/>
+        My biggest hobby apart from software development is diving. Floating in deep water and only thinking
+        about the here and now always brings me back to the depths. I try to practice this hobby as often as
+        possible for fun and my health.
+        <br/>
+        <br/>
+        I currently work mainly for the Viennese company SobIT Gmbh. This company develops software for most
+        care companies in Austria, both for staff scheduling and for patient registration.
+        <br/>
+        <br/>
+        I also work for a company called GERLACH SYSTEMS, which is the owner of the SynRadio and SynHost
+        projects. Their main business is the rental of servers, domains, web servers, game servers, etc. at
+        various locations.
+        <br/>
+        <br/>
+        <a [href]="contactSafeMail">
+          <b><u><h3>Just contact me!</h3></u></b>
+        </a>
+      </p>
+    </div>
+
+    <hr>
+    <br>
+
+    <div class="bio grid-container">
+      <div class="grid-item-start">
+        <h1>I work with</h1>
+      </div>
+      <div class="grid-item" *ngFor="let bioText of bioTextsList; let i = index" [hidden]="i !== currentIndex">
+        <h1>{{ bioText }}</h1>
+      </div>
+    </div>
+
+    <div class="contact-area">
+      <a [href]="contactSafeMail">
+        <span>
+          <fa-icon [icon]="faEnvelope" size="3x"></fa-icon>
+        </span>
+      </a>
+
+      <a href="tel:{{globalFields.hrefContactPhone}}">
+        <fa-icon class="fab" [icon]="faPhone" size="3x"></fa-icon>
+      </a>
+
+      <a href="https://discord.com/users/860206216893693973">
+        <fa-icon class="fab" [icon]="faDiscord" size="3x"></fa-icon>
+      </a>
+
+      <a href="https://github.com/fraujulian">
+        <fa-icon class="fab" [icon]="faGithub" size="3x"></fa-icon>
+      </a>
+
+      <a href="https://www.xing.com/profile/Julian_Lechner03274">
+        <fa-icon class="fab" [icon]="faXing" size="3x"></fa-icon>
+      </a>
+
+      <a href="https://www.linkedin.com/in/julian-lechner-98b377356/">
+        <fa-icon class="fab" [icon]="faLinkedin" size="3x"></fa-icon>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div id="github_projects">
+  <div *ngFor="let project of projects">
+    <div class="container" [class.clickable]="project.Clickable" [class.disabled]="!project.Clickable"
+         [style.cursor]="project.Clickable ? 'pointer' : 'default'"
+         (click)="project.Clickable && (project.IsReadmeShown = true)">
+      <div class="card">
+        <div class="media">
+          <div class="media-body">
+            <a href="{{project.Link}}">
+              <u><strong class="d-block text-gray-dark">{{ project.Title }}</strong></u>
+            </a>
+            <div class="stars">
+              {{ project.Languages.join(' | ') }}
+              <ng-container *ngIf="project.Stars != null">
+                <fa-icon [icon]="faStar"></fa-icon>
+                {{ project.Stars }}
+              </ng-container>
+            </div>
+          </div>
+          <p>{{ project.Description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer ngSkipHydration></app-footer>
+
+<div *ngFor="let project of projects">
+  <div *ngIf="project.IsReadmeShown" class="modal github-modal">
+    <div class="modal github-modal card big-card">
+      <a class="modalClose" (click)="project.IsReadmeShown = false">❌</a>
+      <a href="{{project.Link}}">Visit on GitHub</a>
+      <br>
+      <br>
+      <div [innerHTML]="project.Readme"></div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="isApiRateLimitExceeded" class="modal github-modal">
+  <div class="modal github-modal card mini-card">
+    <a class="modalClose" (click)="isApiRateLimitExceeded = false">❌</a>
+    <br>
+    <br>
+    <h1 style="text-align: center">You have exceeded the today's github api request limits!</h1>
+  </div>
+</div>
