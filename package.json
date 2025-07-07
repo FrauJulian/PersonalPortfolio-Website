@@ -1,13 +1,13 @@
 {
   "name": "angular-portfolio-seite",
-  "version": "3.0.10",
+  "version": "3.1.11",
   "scripts": {
-    "dev": "ng serve",
+    "dev": "npm run updateProjectVersion && ng serve",
     "test": "ng test",
     "clean": "del-cli dist && echo SUCCEED CLEAN",
     "updatePackageVersions": "ng update @angular/cli @angular/core && ng update && npm update",
     "updateProjectVersion": "npm version patch --no-git-tag-version && echo SUCCEED UPDATE VERSION",
-    "buildDevelopment": "npm run clean && npm run compress-images && ng build --configuration development && echo SUCCEED DEV BUILD && npm run updateProjectVersion",
+    "buildDevelopment": "npm run clean && ng build --configuration development && echo SUCCEED DEV BUILD && npm run updateProjectVersion",
     "buildProduction": "npm run clean && ng build --configuration production && echo SUCCEED PROD BUILD && npm run updateProjectVersion",
     "start": "node dist/server/server.mjs"
   },
