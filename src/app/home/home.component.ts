@@ -79,7 +79,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   protected readonly contactSafeMail: SafeUrl;
 
-  protected readonly personalInformation: string = 'You found an easter egg, why are you here!?!\nYou want to know more personal things about me? - Then you will find your information here!:\nI am currently building an independent foundation for my financial freedom. I am establishing my own software company specializing in client-based projects.\nMy motto, “No stress in life,” guides me to avoid unnecessary pressure.\nI identify as pansexual, meaning I am attracted to individuals regardless of their gender. - I am in a committed relationship. (I have been a man since the very beginning of my life.)';
+  protected readonly personalInformation: string = 'You found an easter egg, why are you here!?!\nYou want to know more personal things about me? - Then you will find your information here!:\nI am currently building an independent foundation for my financial freedom. I am establishing my own software company specializing in client-based projects.\nMy motto, “No stress in life,” guides me to avoid unnecessary pressure.\nI identify as pansexual, meaning I am attracted to individuals regardless of their gender. - I am in a committed relationship. (I have been a man since the very beginning of my life. Don\'t be confused about my username, it\'s just a name!)';
   readonly bioTextsList: string[] = [
     'C#',
     '.NET',
@@ -127,7 +127,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   ]
 
   constructor(private _sanitizer: DomSanitizer, private zone: NgZone, private dialog: MatDialog) {
-    this.fillProjects();
     this.contactSafeMail = this._sanitizer.bypassSecurityTrustUrl(`mailto:${globalFields.contactMail}`);
   }
 
@@ -138,16 +137,23 @@ export class HomeComponent implements OnInit, OnDestroy {
           this.currentIndex = (this.currentIndex + 1) % this.bioTextsList.length;
         });
       });
+
+      setTimeout((): void => {
+        this.zone.run((): void => {
+          this.fillProjects();
+        });
+      }, 1000);
     });
   }
 
   ngOnDestroy(): void {
     this.sub.unsubscribe();
   }
+
   openStalkerInfo(): void {
     this.dialog.open(StalkerComponent, {
       width: '420px',
-      data: { message: this.personalInformation }
+      data: {message: this.personalInformation}
     });
   }
 
@@ -167,7 +173,7 @@ export class HomeComponent implements OnInit, OnDestroy {
           if (data.message && data.documentation_url) {
             this.isApiRateLimitExceeded = true;
           }
-          throw new Error('403 Forbidden');
+          return new Error('403 Forbidden');
         }
         return rawResponse.json();
       })
