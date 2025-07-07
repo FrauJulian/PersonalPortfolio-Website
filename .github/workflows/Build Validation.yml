@@ -8,19 +8,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Repository auschecken
+      - name: checkout Repository
         uses: actions/checkout@v4
 
-      - name: Node.js v22.16.0 einrichten
+      - name: use NodeJS v22.16.0
         uses: actions/setup-node@v4
         with:
           node-version: '22.16.0'
 
-      - name: Abhängigkeiten installieren
+      - name: Install Dependencies
         run: npm install
 
-      - name: Build DEV ausführen
+      - name: run Build DEV 
         run: npm run buildDevelopment
 
-      - name: Build PROD ausführen
+      - name: run Build PROD
         run: npm run buildProduction
