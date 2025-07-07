@@ -38,10 +38,9 @@ app.get('**', (req: Request, res: Response, next: NextFunction): void => {
 });
 
 if (isMainModule(import.meta.url)) {
-  const host: string = ProductionConfig.Server.Host;
   const port: number = ProductionConfig.Server.Port;
-  app.listen(port, host, (): void => {
-    console.log(`✔️ Listening on http://${host}:${port}`);
+  app.listen(port, (): void => {
+    console.log(`✔️ Listening on Port ${port}`);
   });
 }
 

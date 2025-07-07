@@ -1,6 +1,6 @@
 {
   "name": "angular-portfolio-seite",
-  "version": "3.0.6",
+  "version": "3.0.10",
   "scripts": {
     "dev": "ng serve",
     "test": "ng test",

@@ -1,6 +1,5 @@
 ﻿{
   "Server": {
-    "Host": "localhost",
     "Port": 3005
   }
 }
