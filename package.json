@@ -1,6 +1,7 @@
 {
   "name": "angular-portfolio-seite",
   "version": "3.1.11",
+  "main": "src/server.ts",
   "scripts": {
     "dev": "npm run updateProjectVersion && ng serve",
     "test": "ng test",
@@ -10,6 +11,16 @@
     "buildDevelopment": "npm run clean && ng build --configuration development && echo SUCCEED DEV BUILD && npm run updateProjectVersion",
     "buildProduction": "npm run clean && ng build --configuration production && echo SUCCEED PROD BUILD && npm run updateProjectVersion",
     "start": "node dist/server/server.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FrauJulian/Personal-Portfolio-Website"
+  },
+  "author": {
+    "name": "Lechner Julian",
+    "nickname": "FrauJulian",
+    "email": "contact@fraujulian.xyz",
+    "website": "https://fraujulian.xyz/"
   },
   "private": true,
   "dependencies": {
