@@ -53,4 +53,8 @@ npm run updatePackageVersions
 ## 📋 Credits:
 ~ made by [**FrauJulian**](https://fraujulian.xyz/).  
 
-### Greetings from Austria!
+## 🤝 Enjoy?
+
+Give it a star ⭐ on [github](https://github.com/FrauJulian/discord-audio-stream)!
+
+### Greetings from Austria! ⛰️
