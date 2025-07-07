@@ -47,7 +47,7 @@ nom run test
 ## Update Packages/Libraries
 
 ```bash
-updatePackageVersions
+npm run updatePackageVersions
 ```
 
 ## 📋 Credits:
