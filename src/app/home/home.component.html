@@ -1,8 +1,15 @@
 <section class="container">
   <div class="card profile">
 
-    <img ngSrc="Logo.webp" (click)="openStalkerInfo()" priority width="200" height="200" fetchpriority="high"
-         alt="profile picture"/>
+    <img
+      ngSrc="Logo.webp"
+      width="200"
+      height="200"
+      priority
+      fetchpriority="high"
+      alt="profile picture"
+      srcset="Logo.webp 1x, Logo.webp 2x"
+      (click)="openStalkerInfo()" />
     <h1>Hallo! 👋 I'm {{ globalFields.firstname }} {{ globalFields.lastname }}!</h1>
     <h3>📍 Austria, Vienna</h3>
 
@@ -15,7 +22,7 @@
 
         <a>
           <u>
-            <h3>A motivated young full-stack software developer from Austria.</h3>
+            <h3>A young full-stack software developer from Austria.</h3>
           </u>
         </a>
 
