@@ -1,4 +1,4 @@
-name: Build Solution
+name: Build Production
 
 on:
   workflow_dispatch:
@@ -37,4 +37,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ${{ env.VERSION }}
-          path: ${{ env.VERSION }}.zip
+          path: ${{ env.VERSION }}
