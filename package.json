@@ -12,10 +12,8 @@
     "buildProduction": "npm run clean && ng build --configuration production && echo SUCCEED PROD BUILD && npm run updateProjectVersion",
     "start": "node dist/server/server.mjs"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/FrauJulian/Personal-Portfolio-Website"
-  },
+  "repository": "https://github.com/FrauJulian/Personal-Portfolio-Website",
+  "bugs": "https://github.com/FrauJulian/Personal-Portfolio-Website/issues",
   "author": {
     "name": "Lechner Julian",
     "nickname": "FrauJulian",
