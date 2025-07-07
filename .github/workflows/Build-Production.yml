@@ -7,33 +7,33 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Repository auschecken
+      - name: checkout Repository
         uses: actions/checkout@v4
 
-      - name: Node.js v22.16.0 einrichten
+      - name: use NodeJS v22.16.0
         uses: actions/setup-node@v4
         with:
           node-version: '22.16.0'
 
-      - name: Abhängigkeiten installieren
+      - name: Install Dependencies
         run: npm install
 
-      - name: Build ausführen
+      - name: run Build Production
         run: npm run buildProduction
 
-      - name: Version aus package.json auslesen
+      - name: get Version from package.json
         id: get_version
         run: |
           version=$(node -p "require('./package.json').version")
           echo "VERSION=$version" >> $GITHUB_ENV
           
-      - name: dist-Ordner umbenennen
+      - name: rename dist-Folder
         run: mv dist "${{ env.VERSION }}"
 
-      - name: Version-Ordner zippen
+      - name: compress Version-Folder
         run: zip -r "${{ env.VERSION }}-PROD.zip" "${{ env.VERSION }}"
 
-      - name: Build-Artefakt hochladen
+      - name: Upload Build-Artefact
         uses: actions/upload-artifact@v4
         with:
           name: ${{ env.VERSION }}
