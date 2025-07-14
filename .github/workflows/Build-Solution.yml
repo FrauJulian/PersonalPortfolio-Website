@@ -1,4 +1,4 @@
-name: Build Production
+name: Build Solution
 
 on:
   workflow_dispatch:
