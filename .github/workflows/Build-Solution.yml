@@ -10,15 +10,15 @@ jobs:
       - name: checkout Repository
         uses: actions/checkout@v4
 
-      - name: use NodeJS v22.16.0
+      - name: use NodeJS v24.4.0
         uses: actions/setup-node@v4
         with:
-          node-version: '22.16.0'
+          node-version: '24.4.0'
 
       - name: Install Dependencies
         run: npm install
 
-      - name: run Build Production
+      - name: run Build
         run: npm run buildProduction
 
       - name: get Version from package.json
