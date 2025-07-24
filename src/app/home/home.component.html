@@ -9,7 +9,7 @@
       fetchpriority="high"
       alt="profile picture"
       srcset="Logo.webp 1x, Logo.webp 2x"
-      (click)="openStalkerInfo()" />
+      (click)="openStalkerInfo()"/>
     <h1>Hallo! 👋 I'm {{ globalFields.firstname }} {{ globalFields.lastname }}!</h1>
     <h3>📍 Austria, Vienna</h3>
 
@@ -70,9 +70,7 @@
 
     <div class="contact-area">
       <a [href]="contactSafeMail">
-        <span>
-          <fa-icon [icon]="faEnvelope" size="3x"></fa-icon>
-        </span>
+        <fa-icon [icon]="faEnvelope" size="3x"></fa-icon>
       </a>
 
       <a href="tel:{{globalFields.hrefContactPhone}}">
