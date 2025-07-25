@@ -23,7 +23,7 @@ export class ImprintComponent implements OnInit {
   protected readonly zip: number = 3380;
   protected readonly city: string = 'Pöchlarn';
   protected readonly country: string = 'Austria';
-  protected readonly abuseMail: string = 'abuse@fraujulian.xyz';
+  protected readonly abuseMail: string = 'abuse@lechner-systems.at';
 
   protected contactSafeMail!: SafeUrl;
   protected abuseSafeMail!: SafeUrl;
